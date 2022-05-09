@@ -1,1 +1,3 @@
-# Git-Fit
+# Git-Fit - Project 2
+
+Table of Contents
