@@ -1,11 +1,11 @@
-require("dotenv").config();
-const exphbs = require("express-handlebars");
-const express = require("express");
-const path = require("path");
-const sequelize = require("./config/connection");
-const router = require("./controllers");
-const helpers = require("./util/helpers");
-const sessionMiddleware = require("./config/session");
+require('dotenv').config();
+const exphbs = require('express-handlebars');
+const express = require('express');
+const path = require('path');
+const sequelize = require('./config/connection');
+const router = require('./controllers');
+const helpers = require('./util/helpers');
+const sessionMiddleware = require('./config/session');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -17,9 +17,9 @@ const hbs = exphbs.create({ helpers });
 
 // setup app middleware
 app.use(sessionMiddleware);
-app.use(express.static(path.join(__dirname, "public")));
-app.engine("handlebars", hbs.engine, exphbs({ helpers }));
-app.set("view engine", "handlebars");
+app.use(express.static(path.join(__dirname, 'public')));
+app.engine('handlebars', hbs.engine, exphbs({ helpers }));
+app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
