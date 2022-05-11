@@ -1,12 +1,63 @@
-<h1>Home</h1>
 {{#if isLoggedIn}}
   <h2>Welcome, {{user.username}}!</h2>
   <p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quasi ab harum
-  sequi quis iure voluptatibus doloremque dicta optio maiores!</p>
+<h5 class="center-align indigo-text text-lighten-5">Generate a workout with ease using our app. It's as simple as</h5>
+
+<div class="row">
+  <div class="col m4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
+        <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Sample1</span>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+  <div class="col m4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
+        <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Sample2</span>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+    <div class="col m4">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
+        <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Sample3</span>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h6 class="indigo-text text-lighten-5">Choose a Day</h6> 
+<h6 class="indigo-text text-lighten-5">Choose your body part</h6> 
+<h6 class="indigo-text text-lighten-5">Get your workout!</h6>
 {{#unless isLoggedIn}}
   <br />
-  <a class='btn' href='/signup'>Sign Up</a>
+  <h5 class="center-align indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
+<button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit'>Let us help you Git-Fit</button>
 {{/unless}}
+
+
+
+<script src='/js/signup.js'></script>
