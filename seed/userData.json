@@ -1,14 +1,14 @@
 [
   {
-    "username": "harry",
+    "email": "harry",
     "password": "password123"
   },
   {
-    "username": "hermione",
+    "email": "hermione",
     "password": "password123"
   },
   {
-    "username": "hagrid",
+    "email": "hagrid",
     "password": "password123"
   }
 ]
