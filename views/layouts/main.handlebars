@@ -4,19 +4,31 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/style.css' />
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+             <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body>
-    <nav>
-      <a href='/'>Home</a>
-      {{#if isLoggedIn}}
-        <button class='btn btn-logout'>Log Out</button>
-      {{else}}
-        <a href='/login'>login</a>
-        <a href='/signup'>signup</a>
-      {{/if}}
+  <body class="light-blue accent-4">
+    <nav class="blue darken-4 ">
+      <div class="nav-wrapper">
+        <h5 class="brand-logo center indigo-text text-lighten-4">Git-Fit</h5>
+        <ul id="nav-mobile" class="right hide-on-med-and-down hoverable">
+          <li><a href='/' class="indigo-text text-lighten-4">Home</a></li>
+        {{#if isLoggedIn}}
+          <button class='btn btn-logout'>Log Out</button>
+        {{else}}
+          <li><a href='/login' class="indigo-text text-lighten-4">Login</a></li>
+          <li><a href='/signup' class="indigo-text text-lighten-4">Signup</a></li>
+        {{/if}}
+        </ul>
+      </div>
     </nav>
-    {{{body}}}
+    {{{body}}} 
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src='/js/main.js'></script>
   </body>
 </html>

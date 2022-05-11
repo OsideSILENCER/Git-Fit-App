@@ -1,2 +1,2 @@
--- drop database if exists DB_NAME;
+drop database if exists gitfit_db;
 create database gitfit_db;
