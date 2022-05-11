@@ -2,9 +2,9 @@ const { User } = require("../../models");
 const router = require("express").Router();
 
 router.post("/", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.create(req.body, { username, password });
+    const user = await User.create(req.body, { email, password });
     req.session.isLoggedIn = true;
     req.session.userId = user.id;
     req.session.save(() => res.json({ id: user.id }));
@@ -15,9 +15,9 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { email } });
     if (!user) {
       throw new Error("User not found.");
     }
@@ -30,7 +30,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => res.json({ id: user.id }));
   } catch (error) {
     console.error(error);
-    res.status(400).json({ message: "Invalid username or password." });
+    res.status(400).json({ message: "Invalid email or password." });
   }
 });
 
