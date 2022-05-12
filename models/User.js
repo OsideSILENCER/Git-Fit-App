@@ -4,50 +4,54 @@ const sequelize = require("../config/connection");
 
 // create our User model
 class User extends Model {
-  // set up method to run on instance data (per user) to check password
-  checkPassword(loginPw) {
-    return bcrypt.compare(loginPw, this.password);
-  }
+    // set up method to run on instance data (per user) to check password
+    checkPassword(loginPw) {
+        return bcrypt.compare(loginPw, this.password);
+    }
 }
 
-User.init(
-  {
+User.init({
     id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
     },
     email: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true,
+        },
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [10],
+        },
     },
-  },
-  {
+}, {
     hooks: {
-      // set up beforeCreate lifecycle "hook" functionality
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
-          10
-        );
-        return updatedUserData;
-      },
+        // set up beforeCreate lifecycle "hook" functionality
+        beforeCreate: async(newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+        },
+        beforeUpdate: async(updatedUserData) => {
+            updatedUserData.password = await bcrypt.hash(
+                updatedUserData.password,
+                10
+            );
+            return updatedUserData;
+        },
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
-  }
-);
+    modelName: "user",
+});
 
 module.exports = User;

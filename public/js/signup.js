@@ -18,7 +18,7 @@ const handleSignupSubmit = async(event) => {
             return;
         }
 
-        const response = await fetch("/api/users", {
+        const response = await fetch("/api/user/signup", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {
