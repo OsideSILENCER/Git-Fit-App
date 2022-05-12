@@ -25,17 +25,17 @@ app.use(router);
 
 // connect db and listen
 sequelize
-  .sync({ force: false })
-  .then(() => {
-    app.listen(PORT, (err) => {
-      if (err) {
+    .sync({ force: false })
+    .then(() => {
+        app.listen(PORT, (err) => {
+            if (err) {
+                console.error(err);
+                return process.exit(1);
+            }
+            console.log(`App listening on PORT ${PORT}`);
+        });
+    })
+    .catch((err) => {
         console.error(err);
-        return process.exit(1);
-      }
-      console.log(`App listening on PORT ${PORT}`);
+        process.exit(1);
     });
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
