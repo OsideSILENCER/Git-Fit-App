@@ -37,4 +37,12 @@ router.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign-Up Page" });
 });
 
+router.get("/workoutform", (req, res) => {
+  res.render('workoutform', { title: "Workout Form Page" });
+});
+
+router.get("/workout", (req, res) => {
+  res.render('workout', { title: "Workout Page" });
+});
+
 module.exports = router;
