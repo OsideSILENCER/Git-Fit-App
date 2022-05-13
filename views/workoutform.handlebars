@@ -2,7 +2,7 @@
 <div>
   <label></label>
     <select name="weekday"class="container left browser-default col s4">
-      <option value="" disabled selected>Choose your option</option>
+      <option value="">Choose a Day</option>
       <option value="1">Monday</option>
       <option value="2">Tuesday</option>
       <option value="3">Wednesday</option>
@@ -11,8 +11,9 @@
       <option value="6">Saturday</option>
       <option value="7">Sunday</option>
     </select>
+    
     <select name="workoutId" class="container left browser-default col s4">
-      <option value="" disabled selected>Choose your option</option>
+      <option value="">Choose a Workout</option>
       {{#each workouts as |w|}}
         <option value="{{w.id}}">{{w.name}}</option>
       {{/each}}
