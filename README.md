@@ -24,7 +24,7 @@
 
 ## Screenshot
 
--   ![screenshot](public/assets/localhost_3001_.png)
+-   ![screenshot](public/assets/gitfit_screenshot.jpg)
 
 ## Deployment
 
