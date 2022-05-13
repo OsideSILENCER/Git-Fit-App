@@ -12,7 +12,7 @@ const { json } = require('express/lib/response')
 // });
 // I am adding this comment to have at least one change to commit my code as long as my code is working good
 
-router.get('/', async (req, res) => {
+router.get('/', async(req, res) => {
     try {
         let user
         if (req.session.isLoggedIn) {
@@ -40,7 +40,7 @@ router.get('/signup', (req, res) => {
     res.render('signup', { title: 'Sign-Up Page' })
 })
 
-router.get('/workoutform', withAuth, async (req, res) => {
+router.get('/workoutform', withAuth, async(req, res) => {
     const workoutData = await findAllWorkouts()
     res.render('workoutform', {
         workouts: workoutData.results,
@@ -49,7 +49,7 @@ router.get('/workoutform', withAuth, async (req, res) => {
     })
 })
 
-router.get('/workout', async (req, res) => {
+router.get('/workout', async(req, res) => {
     const workoutDataId = await findWorkoutById(req.query.workoutId)
     console.log(workoutDataId.day_list[0].set_list[0].exercise_list[0])
     res.render('workout', {
