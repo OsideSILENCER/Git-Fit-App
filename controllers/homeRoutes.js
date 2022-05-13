@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const { User } = require('../models')
+const { findAllWorkouts, findWorkoutById } = require('../util/workoutApi')
 
 // use withAuth middleware to redirect from protected routes.
-// const withAuth = require("../util/withAuth");
+const withAuth = require('../util/withAuth')
 
 // example of a protected route
 // router.get("/users-only", withAuth, (req, res) => {
@@ -37,14 +38,17 @@ router.get('/signup', (req, res) => {
     res.render('signup', { title: 'Sign-Up Page' })
 })
 
-router.get('/workoutform', (req, res) => {
+router.get('/workoutform', withAuth, async(req, res) => {
+    const workoutData = await findAllWorkouts()
     res.render('workoutform', {
+        workouts: workoutData.results,
         title: 'Workout Form Page',
         isLoggedIn: req.session.isLoggedIn,
     })
 })
 
 router.get('/workout', (req, res) => {
+    console.log(req.query)
     res.render('workout', {
         title: 'Workout Page',
         isLoggedIn: req.session.isLoggedIn,
