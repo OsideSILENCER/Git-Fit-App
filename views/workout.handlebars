@@ -1,15 +1,21 @@
-   <div class="workout-container center">
-    <div class="box">
-        <div class="info">
-
-            <br><br>
-
-                {{#each workout as |excersise|}}
-                   <div>{{excersise.exercise_list.[0].obj.name}}</div>
-                   <div>{{excersise.exercise_list.[0].setting_text}}</div>
-                {{/each}}
-        </div>
-    </div>
+   </br>
+<div class="container indigo lighten-4 hoverable">
+  <table class="centered responsive-table">
+    <thead>
+      <tr>
+        <th>Workout</th>
+        <th>Reps and Sets</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each workout as |excersise|}}
+      <tr>
+        <td><div>{{excersise.exercise_list.[0].obj.name}}</div></td>
+        <td><div>{{excersise.exercise_list.[0].setting_text}}</div></td>
+      </tr>
+        {{/each}}
+    </tbody>
+  </table>
 </div>
 
             
