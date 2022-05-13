@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col m4">
-    <div class="card">
+    <div class="card large">
       <div class="card-image">
         <img src="/assets/fitness-1.jpeg">
         <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Sign In</span>
@@ -20,8 +20,8 @@
     </div>
   </div>
   <div class="col m4">
-    <div class="card">
-      <div class="card-image">
+    <div class="card large">
+      <div class="card-image" name="">
         <img src="/assets/fitness-2.webp">
         <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Good Results Start With a Good Workout</span>
       </div>
@@ -39,27 +39,19 @@
         <img src="/assets/fitness-3.jpeg">
         <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);"></span>
       </div>
-      <div class="card-content">
-        <p></p>
-      </div>
-      <div class="card-action">
-        <a href="#"></a>
-      </div>
     </div>
   </div>
 </div>
-
-<h6 class="indigo-text text-lighten-5">Sign-In.</h6> 
-<h6 class="indigo-text text-lighten-5">Choose your day.</h6> 
-<h6 class="indigo-text text-lighten-5">Choose your workout focus.</h6>
-<h6 class="indigo-text text-lighten-5">Its that easy!</h6>
+{{#if isLoggedIn}}
+<div class='center-align'>
+  <a href='/workoutform'>
+    <button class='btn waves-effect waves-light hoverable amber black-text' type='submit' name="getworkout">Get your workout!</button>
+  </a>
+</div>
+{{/if}}
 {{#unless isLoggedIn}}
 <br />
 <h5 class="center-align indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
 <button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit'>Let us help you
   Git-Fit</button>
 {{/unless}}
-
-
-
-<script src='/js/signup.js'></script>
