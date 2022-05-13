@@ -50,14 +50,12 @@ router.get('/workoutform', withAuth, async(req, res) => {
 })
 
 router.get('/workout', async(req, res) => {
-    console.log(req.query)
     const workoutDataId = await findWorkoutById(req.query.workoutId)
-    console.log(workoutDataId.day_list[0].set_list[0])
+    console.log(workoutDataId.day_list[0].set_list[0].exercise_list[0])
     res.render('workout', {
-        workout: workoutDataId.day_list[0].set_list[0],
+        workout: workoutDataId.day_list[0].set_list,
         title: 'Workout Page',
         isLoggedIn: req.session.isLoggedIn,
     })
 })
-
 module.exports = router

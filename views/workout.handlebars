@@ -1,44 +1,11 @@
-<body>
-    <table class="indigo lighten-5 centered container responsive-table">
-        <thead>
-            <tr>
-                <td></td>
-                <td><h3 class="indigo lighten-5 card-panel container center-align">Monday Legs</h3></td>
-            </tr>
-            <tr>
-                <th>Workout Name</th>
-                <th>Reps</th>
-                <th>Sets</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <tr>
-                <td>Squat</td>
-                <td>12 Reps</td>
-                <td>5 Sets</td>
-            </tr>
-            <tr>
-                <td>Leg Press</td>
-                <td>12 Reps</td>
-                <td>3 Sets</td>
-            </tr>
-            <tr>
-                <td>Leg Extension</td>
-                <td>12 Reps</td>
-                <td>3 Sets</td>
-            </tr>
-            <tr>
-                <td>Sitting Calf Raises</td>
-                <td>12 Reps</td>
-                <td>3 Sets</td>
-            </tr>
-            <tr>
-                <td>Leg Raises, Lying</td>
-                <td>30 Reps</td>
-                <td>3 Sets</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+<div class="workout-container">
+    <div class="box">
+        <div class="info">
+                {{#each workout as |excersise|}}
+                   <div>{{excersise.exercise_list.[0].comment_list}}</div>
+                   <div>{{excersise.exercise_list.[0].obj.name}}</div>
+                   <div>{{excersise.exercise_list.[0].setting_text}}</div>
+                {{/each}}
+        </div>
+    </div>
+</div>
