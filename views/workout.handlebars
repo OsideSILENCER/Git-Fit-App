@@ -1,13 +1,14 @@
-<div class="workout-container">
+   <div class="workout-container center">
     <div class="box">
         <div class="info">
-            <h1>{{data.title}}</h1>
-            
-            {{{data.desc}}}
-             {{#each workout as |w|}}
-        <option value="{{w.id}}">{{w.name}}</option>
-      {{/each}}
             <br><br>
+                {{#each workout as |excersise|}}
+                   <div>{{excersise.exercise_list.[0].obj.name}}</div>
+                   <div>{{excersise.exercise_list.[0].setting_text}}</div>
+                {{/each}}
         </div>
     </div>
 </div>
+
+            
+              
