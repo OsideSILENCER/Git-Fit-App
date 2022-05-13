@@ -10,7 +10,7 @@ const withAuth = require('../util/withAuth')
 //   // ...
 // });
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     try {
         let user
         if (req.session.isLoggedIn) {
@@ -38,7 +38,7 @@ router.get('/signup', (req, res) => {
     res.render('signup', { title: 'Sign-Up Page' })
 })
 
-router.get('/workoutform', withAuth, async(req, res) => {
+router.get('/workoutform', withAuth, async (req, res) => {
     const workoutData = await findAllWorkouts()
     res.render('workoutform', {
         workouts: workoutData.results,
