@@ -1,6 +1,7 @@
+<form action="/workout">
 <div>
   <label></label>
-    <select class="container left browser-default col s4">
+    <select name="weekday"class="container left browser-default col s4">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">Monday</option>
       <option value="2">Tuesday</option>
@@ -10,6 +11,7 @@
       <option value="6">Saturday</option>
       <option value="7">Sunday</option>
     </select>
+<<<<<<< HEAD
     <select class="container right browser-default col s4">
       <option value="" disabled selected>Choose your option</option>
       <option value="8">Legs</option>
@@ -23,3 +25,14 @@
     <button class='btn waves-effect waves-light hoverable amber black-text' type='submit'>Submit</button>
   </a>  
 </div>
+=======
+    <select name="workoutId" class="container left browser-default col s4">
+      <option value="" disabled selected>Choose your option</option>
+      {{#each workouts as |w|}}
+        <option value="{{w.id}}">{{w.name}}</option>
+      {{/each}}
+     </select>
+</div>
+  <button class='btn waves-effect waves-light hoverable amber black-text' type='submit'>Submit</button>
+</form>
+>>>>>>> 8985b82eb5a0d607127976576c760c68f004e6b6

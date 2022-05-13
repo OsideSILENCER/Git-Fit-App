@@ -1,6 +1,11 @@
 {{#if isLoggedIn}}
+<<<<<<< HEAD
   <h2 class="center-align">Welcome, {{user.email}}!</h2>
   <h6 class="center-align">Your id is <strong>{{user.id}}</strong>.</h6>
+=======
+<h2>Welcome, {{user.username}}!</h2>
+<p>Your id is <strong>{{user.id}}</strong>.</p>
+>>>>>>> 8985b82eb5a0d607127976576c760c68f004e6b6
 {{/if}}
 <h5 class="center-align indigo-text text-lighten-5">Generate a workout with ease using our app. It's as simple as</h5>
 
@@ -33,8 +38,13 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
     <div class="col m4">
     <div class="card large">
+=======
+  <div class="col m4">
+    <div class="card">
+>>>>>>> 8985b82eb5a0d607127976576c760c68f004e6b6
       <div class="card-image">
         <img src="/assets/fitness-3.jpeg">
         <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);"></span>
@@ -50,9 +60,16 @@
 </div>
 {{/if}}
 {{#unless isLoggedIn}}
+<<<<<<< HEAD
   <br />
 <div class='center-align'> 
   <h5 class="indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
 <button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit' name='signup'>Let us help you Git-Fit</button>
 </div>
+=======
+<br />
+<h5 class="center-align indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
+<button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit'>Let us help you
+  Git-Fit</button>
+>>>>>>> 8985b82eb5a0d607127976576c760c68f004e6b6
 {{/unless}}
