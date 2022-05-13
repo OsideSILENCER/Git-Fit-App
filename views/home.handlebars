@@ -6,7 +6,11 @@
 <div class="row">
   <div class="col m4">
     <div class="card">
+<<<<<<< HEAD
+      <div class="card-image" >
+=======
       <div class="card-image">
+>>>>>>> 83ad385e0efbbf0b011eeb6382a80eb4dd80306b
         <img src="/assets/fitness-1.jpeg">
         <span class="card-title" style="width:100%; background: rgba(0, 0, 0, 0.5);">Sign-up or Login</span>
       </div>
@@ -38,7 +42,12 @@
 {{/if}}
 {{#unless isLoggedIn}}
 <br />
-<h5 class="center-align indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
-<button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit'>Let us help you
-  Git-Fit!</button>
+<div class='center-align'>
+  <h5 class="center-align indigo-text text-lighten-5">Are you ready for your Git-Fit journey?</h5>
+    <a href='/signup'>
+      <button class='center-align btn waves-effect waves-light hoverable amber black-text' type='submit'> Let us help you Git-Fit!</button>
+    </a>
+</div>
+<br />
+<br />
 {{/unless}}
